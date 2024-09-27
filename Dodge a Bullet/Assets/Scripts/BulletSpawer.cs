@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BulletSpawer : MonoBehaviour
+public class Padmanager : MonoBehaviour
 {
-    [SerializeField] GameObject prefab;
-
-    [SerializeField] float spawnPosition = 12.0f;
-
     private void Awake()
     {
 
@@ -17,7 +13,7 @@ public class BulletSpawer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("CreateBullet", 3, 2);
+        InvokeRepeating("RandomRotate", 3, 2);
     }
 
     // Update is called once per frame
@@ -26,12 +22,12 @@ public class BulletSpawer : MonoBehaviour
         
     }
 
-    void CreateBullet()
+    void RandomRotate()
     {
-        float angle = Random.Range(0, 361);
+        int rotate = Random.Range(0, 361);
 
-        
+        transform.Rotate(Vector3.up, rotate);
 
-        GameObject bullet = Instantiate(prefab, Vector3.forward * spawnPosition, transform.rotation, gameObject.transform);
+        Debug.Log(rotate);
     }
 }
