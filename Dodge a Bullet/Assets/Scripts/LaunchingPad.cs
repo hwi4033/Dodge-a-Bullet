@@ -20,12 +20,12 @@ public class LaunchingPad : MonoBehaviour
         if (transform.parent.rotation.y != parentRotate)
         {
             CreateBullet();
-
+        
             parentRotate = transform.parent.rotation.y;
         }
     }
 
-    void CreateBullet()
+    public void CreateBullet()
     {
         GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
     }

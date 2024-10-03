@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         
     }
 
-    void OnMove()
+    public void OnMove()
     {
         Vector3 direction = Vector3.zero;
 
